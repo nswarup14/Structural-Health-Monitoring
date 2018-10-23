@@ -1,0 +1,1 @@
+C:\Users\Shrihari\AppData\Local\Programs\Python\Python36\Lib\site-packages\PyQt4\pyuic4.bat -x input.ui -o output.py
