@@ -35,7 +35,7 @@ class Ui_SHM(object):
   	 
     def arimaPressCall(self):
     	self.form2= QtGui.QWidget()
-    	self.other2= Arima_1.Ui_Arima_Processing()
+    	self.other2= Arima_1.Ui_Form()
     	self.other2.setupUi(self.form2)
     	self.form2.show()
 	
@@ -98,7 +98,7 @@ class Ui_SHM(object):
         self.pushButton.clicked.connect(self.defaultPressCall)
         
         self.label_3.setText(_translate("Form", "Techniques for signal processing", None))
-        self.pushButton_3.setText(_translate("Form", "Arima", None))
+        self.pushButton_3.setText(_translate("Form", "Methods of Smoothing", None))
         self.label_4.setText(_translate("Form", "Techniques for the Arima model", None))
         
         
