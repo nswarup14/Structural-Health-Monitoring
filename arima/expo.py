@@ -2,10 +2,12 @@ from pandas import read_csv
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 
 def main(alpha):
+	abspath= os.path.abspath(os.curdir)
 	alpha=float(alpha)
-	series = read_csv('/home/akshit/Documents/Downloads/2.csv', header=0, index_col=0, squeeze=True)
+	series = read_csv(abspath+'/2.csv', header=0, index_col=0, squeeze=True)
 	series.columns = ['a', 'b', 'c', 'd']
 	series['e'] = pow((series['a']*series['a'] + series['b']*series['b'] + series['c']*series['c']), 0.5)
 

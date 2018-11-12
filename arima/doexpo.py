@@ -3,9 +3,10 @@ import pandas as pd
 import numpy as np
 #from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
-
+import os
 def main(alpha,beta):
-	series = read_csv('/home/akshit/Documents/Downloads/2.csv', header=0, index_col=0, squeeze=True)
+	abspath= os.path.abspath(os.curdir)
+	series = read_csv(abspath+'/2.csv', header=0, index_col=0, squeeze=True)
 	series.columns = ['a', 'b', 'c', 'd']
 	series['e'] = pow((series['a']*series['a'] + series['b']*series['b'] + series['c']*series['c']), 0.5)
 

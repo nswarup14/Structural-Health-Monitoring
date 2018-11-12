@@ -1,5 +1,5 @@
 import numpy as np
-import matplotlib.pyplot as plt
+import matplotlib.pylab as plt
 from numpy.fft import fft,fftfreq, ifft
 
 def main(cf1,cf2,cf3,cf4,list_func,l,n):
