@@ -28,4 +28,6 @@ def main(p,q):
 
 	#print("ResultsARMA")
 	plt.plot(r)
+	plt.xlabel('Data',fontsize=12)
+	plt.ylabel('Indices',fontsize=12)
 	plt.show()

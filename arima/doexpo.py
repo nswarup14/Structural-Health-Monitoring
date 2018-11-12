@@ -28,4 +28,6 @@ def main(alpha,beta):
     		b.append(beta*(mn[x] -mn[x-1]) + (1-beta)*(b[x-1]))
 
 	plt.plot(mn)
+	plt.xlabel('Data',fontsize=12)
+	plt.ylabel('Indices',fontsize=12)
 	plt.show()

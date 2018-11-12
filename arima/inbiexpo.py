@@ -24,4 +24,6 @@ def main(alpha,beta,gama):
 	a = ExponentialSmoothing.fit(model, smoothing_level=alpha, smoothing_slope=beta, use_boxcox=True,remove_bias=True, smoothing_seasonal=gama)
 	c = HoltWintersResults.predict(a, start=0)
 	plt.plot(c)
+	plt.xlabel('Data',fontsize=12)
+	plt.ylabel('Indices',fontsize=12)
 	plt.show()

@@ -2,25 +2,64 @@ import numpy as np
 import matplotlib.pyplot as plt
 from numpy.fft import fft,fftfreq, ifft
 
-def main(n,l):
+def main(cf1,cf2,cf3,cf4,list_func,l,n):
 	#setup domain
 	#number of points
+	coff_list=[]
 	try:
+		#print(cf1," ",cf2," ",cf3," ",cf4)
+		#print("sadad")
+		if(cf1==""):
+			coff_list.append(0)
+		else:
+			coff_list.append(int(cf1))
+
+		if(cf2==""):
+			coff_list.append(0)
+		else:
+			coff_list.append(int(cf2))
+
+		if(cf3==""):
+			coff_list.append(0)
+		else:
+			coff_list.append(int(cf3))
+
+		if(cf4==""):
+			coff_list.append(0)
+		else:
+			coff_list.append(int(cf4))
+
+		l=int(l)
 		n=int(n)
-	#time length in secs
-		l= int(l)
+
+
 	except ValueError as e:
 		return
 	#angular frequency
+	#print("sadad")
 	omg=2*np.pi/l
 
 	#creating signals
 	x=np.linspace(0,l,n);
-	y1=1*np.cos(5*omg*x)
-	y2=1*np.cos(10*omg*x)
-	y3=0.5*np.cos(20*omg*x)
+	y1=y2=y3=y4=0
+	y=0
 
-	y=y1+y2+y3
+#	for count in range(0,len(list_func)):
+#		print(coff_list[count]," ",list_func[count])
+
+
+	for each_item_index in range(0,len(list_func)):
+		if(list_func[each_item_index]=="none"):
+			pass
+		else:
+			if(list_func[each_item_index]=="sine"):
+				print(list_func[each_item_index])
+				y += 1*np.sin(int(coff_list[each_item_index])*omg*x)
+			else:
+				print(list_func[each_item_index])
+				y += 1*np.cos(int(coff_list[each_item_index])*omg*x)
+
+
 
 	freq=fftfreq(n)
 
@@ -41,5 +80,4 @@ def main(n,l):
 	#plt.title('True FFT')
 	plt.plot(freq[mask],fft_theo[mask],label='true fft values')
 	plt.show()
-
 

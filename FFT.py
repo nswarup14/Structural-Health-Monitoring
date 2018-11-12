@@ -8,7 +8,7 @@
 
 from PyQt4 import QtCore, QtGui
 import inputTime
-import test
+import test2
 import variable
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -35,7 +35,7 @@ class Ui_FFT_technique(object):
     def fft_test(self):
         #FFT_Test.main()
         self.form= QtGui.QWidget()
-        self.other= test.Ui_test_FFT()
+        self.other= test2.Ui_Form()
         self.other.setupUi(self.form)
         self.form.show()
     def fft_variable(self):
@@ -79,8 +79,8 @@ class Ui_FFT_technique(object):
 
     def retranslateUi(self, FFT_technique):
         FFT_technique.setWindowTitle(_translate("FFT_technique", "Form", None))
-        self.pushButton.setText(_translate("FFT_technique", "Testing", None))
-        self.label.setText(_translate("FFT_technique", "Select time and the transformation function", None))
+        self.pushButton.setText(_translate("FFT_technique", "Best Fit", None))
+        self.label.setText(_translate("FFT_technique", "Mean Sampling rate", None))
 
         self.pushButton.clicked.connect(self.fft_inputTime)
 
@@ -89,8 +89,8 @@ class Ui_FFT_technique(object):
 
         self.pushButton_2.clicked.connect(self.fft_variable)
 
-        self.pushButton_3.setText(_translate("FFT_technique", "Best Fit", None))
-        self.label_3.setText(_translate("FFT_technique", "Mean Sampling rate", None))
+        self.pushButton_3.setText(_translate("FFT_technique", "Testing", None))
+        self.label_3.setText(_translate("FFT_technique", "Select time and the transformation function", None))
 
         self.pushButton_3.clicked.connect(self.fft_test)
 

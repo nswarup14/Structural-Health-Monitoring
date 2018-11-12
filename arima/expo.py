@@ -22,6 +22,8 @@ def main(alpha):
 	        fd[x] = alpha*fd[x] + (1-alpha)*fd[x-1]
 
 	plt.plot(fd)
+	plt.xlabel('Data',fontsize=12)
+	plt.ylabel('Indices',fontsize=12)
 	plt.show()
 
 if __name__ == '__main__':
