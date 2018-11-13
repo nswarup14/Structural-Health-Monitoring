@@ -12,7 +12,7 @@ import basic_exponential
 import trend_exponential
 import seasoning_exponential
 import ARMA, ARIMA
-from arima import ma
+from arima import ma,ar
 
 
 try:
@@ -64,9 +64,14 @@ class Ui_Form(object):
     	self.otherForm.setupUi(self.selfForm)
     	self.selfForm.show()
 
+    def autoRegression(self):
+    	ar.main()
+
     def setupUi(self, Form):
         Form.setObjectName(_fromUtf8("Form"))
         Form.resize(700, 300)
+        self.pushButton_7= QtGui.QPushButton(Form)
+        self.pushButton_7.setGeometry(QtCore.QRect(51,20,200,27))
         self.pushButton = QtGui.QPushButton(Form)
         self.pushButton.setGeometry(QtCore.QRect(51, 60, 200, 27))
         self.pushButton.setObjectName(_fromUtf8("pushButton"))
@@ -74,7 +79,7 @@ class Ui_Form(object):
         self.pushButton_2.setGeometry(QtCore.QRect(50, 100, 200, 27))
         self.pushButton_2.setObjectName(_fromUtf8("pushButton_2"))
         self.pushButton_3 = QtGui.QPushButton(Form)
-        self.pushButton_3.setGeometry(QtCore.QRect(51, 145,200,27))
+        self.pushButton_3.setGeometry(QtCore.QRect(51, 140,200,27))
         self.pushButton_3.setObjectName(_fromUtf8("pushButton_3"))
         self.pushButton_4= QtGui.QPushButton(Form)
         self.pushButton_4.setGeometry(QtCore.QRect(51, 180,280,27))
@@ -97,6 +102,7 @@ class Ui_Form(object):
         self.pushButton_4.setText(_translate("Form", "Trend and seasonal Exponential Smoothing", None))
         self.pushButton_5.setText(_translate("Form", "ARMA", None))
         self.pushButton_6.setText(_translate("Form", "ARIMA", None))
+        self.pushButton_7.setText(_translate("Form","Auto Regression Model",None))
         
 
         self.pushButton.clicked.connect(self.moving_average)
@@ -105,6 +111,7 @@ class Ui_Form(object):
         self.pushButton_4.clicked.connect(self.seasoning_exponential)
         self.pushButton_5.clicked.connect(self.ARMA)
         self.pushButton_6.clicked.connect(self.ARIMA)
+        self.pushButton_7.clicked.connect(self.autoRegression)
         #self.pushButton_2.setText(_translate("Form", "\"Enter Text here\"", None))
 
 
